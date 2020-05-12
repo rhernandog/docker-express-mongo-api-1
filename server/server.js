@@ -9,14 +9,12 @@ connectToDb();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/api", express.static("public"));
-app.use("/api/values", express.static(__dirname + "/public/values"));
 
 app.get("/api", (req, res) => {
   res.send("<h1>BASE API ROUTE ANOTHER TITLE</h1>");
 });
 
-app.get("/api/all-values", async (req, res) => {
+app.get("/api/values", async (req, res) => {
   const allValues = await getAllValues();
   console.log(allValues);
   res.status(200).json({
