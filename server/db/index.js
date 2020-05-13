@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-
-const mongoDBURI = "mongodb://rhernando:rmhg2317@ds117834.mlab.com:17834/docker-express-api";
+const { mongoURI } = require("../config/config");
 
 const connectToDb = async () => {
-  const connection = await mongoose.connect(mongoDBURI, {
+  const connection = await mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

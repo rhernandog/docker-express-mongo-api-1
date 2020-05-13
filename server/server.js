@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const connectToDb = require("./db/index");
-const keys = require("./keys");
 const { addValue, getAllValues } = require("./controllers/values");
 
 connectToDb();
