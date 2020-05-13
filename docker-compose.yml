@@ -5,10 +5,14 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
-    volumes:
-      - ./client:/usr/share/nginx/html/
     ports: 
       - "8000:80"
+  static:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - ./client /app
   api:
     build:
       dockerfile: Dockerfile.dev
@@ -16,4 +20,3 @@ services:
     volumes:
       - /app/node_modules
       - ./server:/app
-      - ./client:/usr/share/nginx/html/

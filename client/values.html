@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-12">
         <h1 class="text-center">All Values API End Point</h1>
-        <a href="/" class="btn btn-info">API Home</a>
+        <a href="/" class="btn btn-info">Home Page</a>
         <hr>
       </div>
     </div>
@@ -43,7 +43,7 @@
 <script>
   window.onload = function () {
     const valuesContainer = document.getElementById("valuesContainer");
-    axios.get("/api/all-values")
+    axios.get("/api/values")
       .then(res => {
         res.data.data.forEach(valueElement => {
           const valueDomItem = document.createElement("li");
